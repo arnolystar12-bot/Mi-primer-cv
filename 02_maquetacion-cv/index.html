@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Citlalli Lopez | CV</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Cinzel&family=Quicksand&family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+    background: radial-gradient(circle at top, #2e3b2b, #121a12);
+    color: #f5f0e6;
+    overflow-x: hidden;
+}
+
+/* 🍄 DECORACIÓN */
+body::before, body::after {
+    content: "🍄";
+    position: fixed;
+    font-size: 70px;
+    opacity: 0.05;
+    animation: flotar 8s infinite ease-in-out;
+}
+body::before { top: 10%; left: 5%; }
+body::after { bottom: 10%; right: 5%; }
+
+@keyframes flotar {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-30px); }
+}
+
+/* CONTENEDOR */
+.main-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+    animation: aparecer 1s ease;
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* HEADER */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.cv-title {
+    font-family: 'Pacifico', cursive;
+    font-size: 3rem;
+    color: #e6d3a3;
+    text-shadow: 0 0 20px rgba(230,211,163,0.8);
+    animation: glow 3s infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px rgba(230,211,163,0.5); }
+    to { text-shadow: 0 0 30px rgba(230,211,163,1); }
+}
+
+/* GRID */
+.container {
+    display: flex;
+    gap: 20px;
+}
+
+/* IZQUIERDA */
+.left-column {
+    width: 35%;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(12px);
+    padding: 20px;
+    border-radius: 25px;
+    transition: 0.4s;
+}
+
+.left-column:hover {
+    transform: scale(1.02);
+}
+
+/* FOTO */
+.profile-img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    display: block;
+    margin: auto;
+    border: 3px solid #b8a977;
+    transition: 0.6s;
+}
+
+.profile-img:hover {
+    transform: scale(1.2) rotate(360deg);
+}
+
+/* NOMBRE */
+.profile-name {
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    font-size: 1.3rem;
+    margin-top: 10px;
+}
+
+/* NAV */
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 10px 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    background: linear-gradient(135deg, #2c2c2c, #3a3a3a);
+    color: #f5f0e6;
+    padding: 10px 14px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    background: #b8a977;
+    transform: translateX(8px) scale(1.05);
+}
+
+/* TITULOS */
+h2 {
+    background: #b8a977;
+    padding: 6px 14px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-top: 20px;
+    font-family: 'Playfair Display', serif;
+}
+
+/* DERECHA */
+.right-column {
+    width: 65%;
+}
+
+/* TARJETAS */
+.job {
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    transition: 0.4s;
+    margin-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.job::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: 0.5s;
+}
+
+.job:hover::before {
+    left: 100%;
+}
+
+.job:hover {
+    transform: translateY(-8px) scale(1.02);
+}
+
+/* TITULOS INTERNOS */
+h3 {
+    font-family: 'Cinzel', serif;
+    color: #e6d3a3;
+}
+
+/* TEXTO */
+p, li {
+    font-size: 0.95rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px){
+    .container {
+        flex-direction: column;
+    }
+    .left-column, .right-column {
+        width: 100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="main-container">
+
+<header>
+<h1 class="cv-title">Mi Perfil Profesional 🍄</h1>
+</header>
+
+<div class="container">
+
+<!-- IZQUIERDA -->
+<div class="left-column">
+
+<div class="profile-container">
+    <img class="profile-img" src="images/foto-perfil.jpeg"
+    style="transition: transform 0.6s ease;"
+    onmouseover="this.style.transform='scale(1.2) rotate(360deg)'"
+    onmouseout="this.style.transform='scale(1) rotate(0deg)'">
+
+    <!-- Estrellas -->
+    <span class="star star1">★</span>
+    <span class="star star2">★</span>
+    <span class="star star3">★</span>
+</div>
+
+<h1 class="profile-name">CITLALLI JAZMIN LOPEZ MENDEZ</h1>
+
+<section>
+<h2>Contacto</h2>
+<p><i class="fa-solid fa-envelope"></i> arnolystar12@gmail.com</p>
+<p><i class="fa-solid fa-location-dot"></i> Ciudad del Carmen</p>
+</section>
+
+<nav>
+<ul>
+<li><a href="portafolio1.html"><i class="fa-solid fa-pen-nib"></i> Logos</a></li>
+<li><a href="portafolio2.html"><i class="fa-solid fa-cube"></i> 3D</a></li>
+<li><a href="portafolio3.html"><i class="fa-solid fa-code"></i> Web</a></li>
+<li><a href="portafolio4.html"><i class="fa-solid fa-bullhorn"></i> Publicidad</a></li>
+<li><a href="portafolio5.html"><i class="fa-solid fa-camera"></i> Fotos</a></li>
+</ul>
+</nav>
+
+<section>
+<h2>Perfil</h2>
+<p>Soy diseñadora multimedia interesada en integrarme a un entorno laboral donde pueda poner en práctica mis habilidades digitales. Tengo experiencia en ilustración, tecnología y desarrollo creativo, abarcando áreas como modelado 3D, diseño gráfico, desarrollo web, branding y mockups.</p>
+</section>
+
+<section>
+<h2>Perfil Profesional</h2>
+<p>Soy diseñadora multimedia interesada en integrarme a un entorno laboral donde pueda poner en práctica mis habilidades digitales. Tengo experiencia en ilustración, tecnología y desarrollo creativo, abarcando áreas como modelado 3D, diseño gráfico, desarrollo web, branding y mockups.</p>
+</section>
+
+<section>
+<h2>Aptitudes</h2>
+<ul>
+<li>Ilustrador</li>
+<li>Habilidad creativa</li>
+<li>Arte Tradicional</li>
+<li>Programas: C++, Unity, Visual</li>
+<li>Animación intermedio</li>
+<li>Profesional Autónomo y responsable</li>
+<li>Modelado 3d básico</li>
+<li>Persona responsable y dedicada</li>
+<li>Comprometida</li>
+</ul>
+</section>
+
+<section>
+<h2>Idiomas</h2>
+<p><strong>Español:</strong> Idioma nativo</p>
+<p><strong>Inglés:</strong> Básico nivel 2</p>
+</section>
+
+</div>
+
+<!-- DERECHA -->
+<div class="right-column">
+
+<section>
+<h2>Experiencia Laboral</h2>
+
+<div class="job">
+<h3>Ilustradora tradicional y Diseñador Autónomo - Cd del Carmen</h3>
+<p>Agosto 2022 - Actualidad</p>
+<ul>
+<li>Creación de ilustraciones en papel.</li>
+<li>Desarrollo de creaciones de alta calidad.</li>
+<li>Uso de teoría del color e iluminación.</li>
+<li>Diseños para medios digitales e impresos.</li>
+</ul>
+</div>
+
+<div class="job">
+<h3>Diseñador Autónomo - Cd del Carmen</h3>
+<p>Agosto 2022 - Actualidad</p>
+<ul>
+<li>Atención al cliente.</li>
+<li>Diseño web y mockups.</li>
+<li>Ediciones digitales.</li>
+<li>Uso de Photoshop.</li>
+</ul>
+</div>
+
+</section>
+
+<section>
+<h2>Formación Académica</h2>
+<h3>Licenciatura en Diseño Multimedia</h3>
+<p>Agosto 2022 - Actualidad</p>
+<p>Universidad Autónoma del Carmen | Ciudad del Carmen</p>
+</section>
+
+<section>
+<h2>Cursos y Actividades</h2>
+<h3>Club de Animación - Universidad Autónoma del Carmen</h3>
+<p>Marzo 2023 - Actualidad</p>
+<ul>
+<li>Organización de eventos.</li>
+<li>Desarrollo de animaciones.</li>
+<li>Preparación de materiales.</li>
+<li>Creación de taumatropo.</li>
+<li>Experiencia en ventas.</li>
+</ul>
+</section>
+
+</div>
+
+</div>
+</div>
+
+</body>
+</html>

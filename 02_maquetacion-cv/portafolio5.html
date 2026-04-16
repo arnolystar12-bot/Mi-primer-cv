@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Fotografía</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Cinzel&family=Quicksand&family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+    background: radial-gradient(circle at top, #3a4a34, #1f2a1d);
+    color: #f5f0e6;
+}
+
+/* 🍄 DECORACIÓN */
+body::before {
+    content: "🍄";
+    position: fixed;
+    top: 15%;
+    right: 6%;
+    font-size: 60px;
+    opacity: 0.07;
+    animation: flotar 6s infinite ease-in-out;
+}
+
+@keyframes flotar {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* CONTENEDOR */
+.main-container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* HEADER */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.cv-title {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.8rem;
+    color: #e6d3a3;
+    text-shadow: 0 0 12px rgba(230,211,163,0.6);
+}
+
+/* BOTÓN VOLVER */
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 16px;
+    border-radius: 25px;
+    background: linear-gradient(45deg, #d4c59a, #b8a977);
+    color: #2f3e2c;
+    font-family: 'Playfair Display', serif;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+/* FLASH */
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.5);
+    transition: 0.5s;
+}
+
+nav ul li a:hover::after {
+    left: 100%;
+}
+
+nav ul li a:hover {
+    transform: translateX(-5px) scale(1.05);
+    box-shadow: 0 0 18px rgba(212,197,154,0.9);
+}
+
+/* ICONO CÁMARA */
+.camara {
+    animation: latido 1.5s infinite;
+}
+
+@keyframes latido {
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+/* GRID */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+/* TARJETAS */
+.job {
+    background: rgba(243,233,210,0.95);
+    color: #2c2c2c;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    transition: 0.4s;
+    position: relative;
+    padding: 10px;
+}
+
+/* DETALLE FOTO */
+.job::after {
+    content: "📷";
+    position: absolute;
+    bottom: 10px;
+    right: 12px;
+    opacity: 0.2;
+}
+
+/* HOVER TARJETA */
+.job:hover {
+    transform: translateY(-10px) scale(1.03);
+}
+
+/* ✨ IMAGEN MEJORADA */
+.job img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain; /* IMAGEN COMPLETA */
+    background: #2c2c2c;
+    border: 4px solid #b8a977;
+    border-radius: 12px;
+    padding: 5px;
+    margin-bottom: 8px;
+    box-sizing: border-box;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+}
+
+/* HOVER IMAGEN */
+.job:hover img {
+    transform: scale(1.08);
+    filter: brightness(1.1) contrast(1.1);
+    box-shadow: 0 0 12px rgba(0,0,0,0.5);
+}
+
+/* CLICK 🔥 */
+.job img:active {
+    transform: scale(1.5);
+    z-index: 2;
+}
+
+/* TEXTO */
+.job p {
+    padding: 8px;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px){
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="main-container">
+
+<header>
+<h1 class="cv-title">Fotografía</h1>
+
+<nav>
+<ul>
+<li>
+<a href="index.html">
+<i class="fa-solid fa-arrow-left"></i>
+<i class="fa-solid fa-camera camara"></i>
+Volver
+</a>
+</li>
+</ul>
+</nav>
+</header>
+
+<div class="container">
+
+<div class="job">
+<img src="images/rio.jpeg">
+<p>Río</p>
+</div>
+
+<div class="job">
+<img src="images/malecon.jpeg">
+<p>Malecón</p>
+</div>
+
+<div class="job">
+<img src="images/muelle.jpeg">
+<p>Muelle</p>
+</div>
+
+<div class="job">
+<img src="images/paz.jpeg">
+<p>Paz</p>
+</div>
+
+<div class="job">
+<img src="images/concentracion.png">
+<p>Concentración</p>
+</div>
+
+<div class="job">
+<img src="images/caminata.png">
+<p>Caminata</p>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>

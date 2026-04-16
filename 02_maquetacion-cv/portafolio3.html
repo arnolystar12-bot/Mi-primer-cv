@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Diseño Web</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Cinzel&family=Quicksand&family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+    background: radial-gradient(circle at top, #3a4a34, #1f2a1d);
+    color: #f5f0e6;
+}
+
+/* 🍄 */
+body::before {
+    content: "🍄";
+    position: fixed;
+    top: 15%;
+    left: 6%;
+    font-size: 60px;
+    opacity: 0.07;
+    animation: flotar 6s infinite ease-in-out;
+}
+
+@keyframes flotar {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.main-container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+}
+
+.cv-title {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.8rem;
+    color: #e6d3a3;
+}
+
+/* BOTÓN VOLVER */
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 16px;
+    border-radius: 25px;
+    background: linear-gradient(45deg, #d4c59a, #b8a977);
+    color: #2f3e2c;
+    font-family: 'Playfair Display', serif;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    transform: translateX(-5px) scale(1.05);
+    box-shadow: 0 0 15px rgba(212,197,154,0.8);
+}
+
+/* ✨ ICONO ANIMADO */
+.codigo {
+    animation: tecleo 1.5s infinite;
+}
+
+@keyframes tecleo {
+    0% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(1.2); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* GRID */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+/* TARJETAS */
+.job {
+    background: rgba(243,233,210,0.95);
+    color: #2c2c2c;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    padding: 10px;
+    transition: 0.3s;
+}
+
+/* ✨ IMAGEN CON ANIMACIÓN */
+.job img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    background: #2c2c2c;
+    border: 4px solid #b8a977;
+    border-radius: 15px;
+    padding: 5px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+/* HOVER */
+.job:hover {
+    transform: translateY(-8px) scale(1.02);
+}
+
+.job:hover img {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0,0,0,0.6);
+}
+
+/* CLICK 🔥 */
+.job img:active {
+    transform: scale(1.5);
+}
+
+/* TEXTO */
+.job p {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px){
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="main-container">
+
+<header>
+<h1 class="cv-title">Diseño Web</h1>
+
+<nav>
+<ul>
+<li>
+<a href="index.html">
+<i class="fa-solid fa-arrow-left"></i>
+<i class="fa-solid fa-code codigo"></i>
+Volver
+</a>
+</li>
+</ul>
+</nav>
+</header>
+
+<div class="container">
+
+<div class="job">
+<img src="images/diseño-pagina-mayor1.png">
+<p>Materia: Interacción humano a computadora.</p>
+<p>Página de cuidados para el adulto mayor.</p>
+</div>
+
+<div class="job">
+<img src="images/diseño-pagina-mayor2.png">
+<p>Materia: Interacción humano a computadora.</p>
+<p>Página de cuidados para el adulto mayor.</p>
+</div>
+
+<div class="job">
+<img src="images/AQUAVIDA-pagina-1.png">
+<p>Materia: Diseño Multimedia</p>
+<p>Proyecto AquaVida.</p>
+<p>En proceso.</p>
+</div>
+
+<div class="job">
+<img src="images/AQUAVIDA-pagina-2.png">
+<p>Materia: Diseño Multimedia</p>
+<p>Proyecto AquaVida.</p>
+<p>En proceso.</p>
+</div>
+
+<div class="job">
+<img src="images/AQUAVIDA-pagina-3.png">
+<p>Materia: Diseño Multimedia</p>
+<p>Proyecto AquaVida.</p>
+<p>En proceso.</p>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>

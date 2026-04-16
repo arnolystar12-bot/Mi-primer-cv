@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portafolio</title>
+
+<!-- FUENTES -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Playfair+Display&family=Cormorant+Garamond&family=Quicksand&family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    font-family: 'Quicksand', sans-serif;
+    background: radial-gradient(circle at top, #3a4a34, #1f2a1d);
+    color: #f5f0e6;
+    overflow-x: hidden;
+}
+
+/* FORMAS DECORATIVAS 🍄 */
+body::before, body::after {
+    content: "🍄";
+    position: fixed;
+    font-size: 40px;
+    opacity: 0.15;
+    animation: flotar 6s infinite ease-in-out;
+}
+
+body::before {
+    top: 10%;
+    left: 5%;
+}
+
+body::after {
+    bottom: 10%;
+    right: 5%;
+}
+
+@keyframes flotar {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* HEADER */
+header {
+    text-align: center;
+    padding: 40px;
+    background: rgba(59,74,54,0.8);
+    border-bottom: 3px solid #d4c59a;
+    backdrop-filter: blur(10px);
+}
+
+.nombre-magico {
+    font-family: 'Pacifico', cursive;
+    font-size: 3.2rem;
+    color: #f3e9d2;
+    text-shadow: 0 0 15px rgba(212,197,154,0.6);
+}
+
+/* SUBTITULO */
+header::after {
+    content: "Diseño • Creatividad • Arte";
+    display: block;
+    margin-top: 10px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    color: #d4c59a;
+}
+
+/* SECCIONES */
+section {
+    padding: 50px;
+}
+
+/* GRID */
+#portafolio {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+/* TARJETAS */
+.portafolio-detalle {
+    background: linear-gradient(145deg, #f3e9d2, #e6d9b5);
+    color: #3b3b2f;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+    transition: 0.4s;
+    position: relative;
+}
+
+/* DECORACIÓN TARJETA */
+.portafolio-detalle::before {
+    content: "🍄";
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    opacity: 0.3;
+}
+
+.portafolio-detalle:hover {
+    transform: translateY(-10px) scale(1.03);
+}
+
+/* IMAGEN */
+.portafolio-detalle img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+/* TEXTO */
+.portafolio-detalle p {
+    padding: 12px;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+}
+
+/* BOTONES */
+button {
+    display: block;
+    margin: 10px auto 15px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(45deg, #d4c59a, #b8a977);
+    color: #2f3e2c;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 12px rgba(212,197,154,0.8);
+}
+
+/* DETALLES */
+h2 {
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    margin-bottom: 15px;
+    color: #e6d3a3;
+}
+
+p {
+    font-family: 'Cormorant Garamond', serif;
+    text-align: center;
+}
+
+/* OCULTO */
+.oculto {
+    display: none;
+}
+
+/* ANIMACIONES */
+.fade-in {
+    animation: aparecer 0.6s ease;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.zoom-in {
+    animation: zoom 0.5s ease;
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1 class="nombre-magico">Mi Portafolio</h1>
+</header>
+
+<section id="portafolio" class="fade-in">
+
+<div class="portafolio-detalle">
+<img src="https://picsum.photos/300/200?1">
+<p>Proyecto 1</p>
+<button onclick="abrirSeccion('detalle1')">Ver más</button>
+</div>
+
+<div class="portafolio-detalle">
+<img src="https://picsum.photos/300/200?2">
+<p>Proyecto 2</p>
+<button onclick="abrirSeccion('detalle2')">Ver más</button>
+</div>
+
+</section>
+
+<section id="detalle1" class="oculto">
+<h2>Proyecto 1</h2>
+<p>Este es el detalle del proyecto 1.</p>
+<button onclick="volver()">⬅ Volver</button>
+</section>
+
+<section id="detalle2" class="oculto">
+<h2>Proyecto 2</h2>
+<p>Este es el detalle del proyecto 2.</p>
+<button onclick="volver()">⬅ Volver</button>
+</section>
+
+<script>
+function abrirSeccion(id) {
+    document.getElementById("portafolio").style.display = "none";
+    let seccion = document.getElementById(id);
+    seccion.style.display = "block";
+    seccion.classList.add("fade-in", "zoom-in");
+}
+
+function volver() {
+    document.querySelectorAll("section").forEach(sec => {
+        sec.style.display = "none";
+    });
+
+    let principal = document.getElementById("portafolio");
+    principal.style.display = "grid";
+}
+</script>
+
+</body>
+</html>

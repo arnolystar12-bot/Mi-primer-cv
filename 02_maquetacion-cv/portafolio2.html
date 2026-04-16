@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Modelado 3D</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Cinzel&family=Quicksand&family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+    background: radial-gradient(circle at top, #3a4a34, #1f2a1d);
+    color: #f5f0e6;
+}
+
+/* 🍄 */
+body::before {
+    content: "🍄";
+    position: fixed;
+    top: 10%;
+    right: 5%;
+    font-size: 60px;
+    opacity: 0.08;
+    animation: flotar 6s infinite ease-in-out;
+}
+
+@keyframes flotar {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.main-container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+}
+
+.cv-title {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.8rem;
+    color: #e6d3a3;
+}
+
+/* BOTÓN */
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border-radius: 25px;
+    background: linear-gradient(45deg, #d4c59a, #b8a977);
+    color: #2f3e2c;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    transform: translateX(-5px) scale(1.05);
+}
+
+/* CUBO */
+.cubo {
+    animation: girar 4s infinite linear;
+}
+
+@keyframes girar {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* GRID */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+/* TARJETAS */
+.job {
+    background: rgba(243,233,210,0.95);
+    color: #2c2c2c;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    padding: 10px;
+    transition: 0.3s;
+    position: relative;
+}
+
+.job::after {
+    content: "🧊";
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    opacity: 0.2;
+}
+
+/* HOVER */
+.job:hover {
+    transform: translateY(-8px) scale(1.03);
+}
+
+/* ✨ IMAGEN */
+.job img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    background: #2c2c2c;
+    border: 4px solid #b8a977;
+    border-radius: 12px;
+    padding: 5px;
+    margin-bottom: 8px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+/* HOVER IMAGEN */
+.job:hover img {
+    transform: scale(1.08);
+}
+
+/* CLICK 🔥 */
+.job img:active {
+    transform: scale(1.5);
+}
+
+/* TEXTO */
+.job p {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px){
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="main-container">
+
+<header>
+<h1 class="cv-title">Modelado 3D</h1>
+
+<nav>
+<ul>
+<li>
+<a href="index.html">
+<i class="fa-solid fa-arrow-left"></i>
+<i class="fa-solid fa-cube cubo"></i>
+Volver
+</a>
+</li>
+</ul>
+</nav>
+</header>
+
+<div class="container">
+
+<div class="job">
+<img src="images/modelo-ballena.png">
+<img src="images/modelo-ballena2.png">
+<p>Materia: Modelado 2.</p>
+<p>Modelo de ballena en el fondo marino.</p>
+<p>Herramientas: Blender</p>
+</div>
+
+<div class="job">
+<img src="images/modelo-femenino.png">
+<img src="images/modelo-femenino2.png">
+<p>Materia: Modelado 2.</p>
+<p>Modelo de cuerpo femenino.</p>
+<p>Herramientas: Blender</p>
+</div>
+
+<div class="job">
+<img src="images/casa-infonavit.jpeg">
+<img src="images/casa-infonavit2.jpeg">
+<p>Materia: Realidad Virtual.</p>
+<p>Casas con texturas detalladas.</p>
+<p>Herramientas: Blender</p>
+</div>
+
+<div class="job">
+<img src="images/concha-acustica2.png">
+<img src="images/concha-acustica2.png">
+<p>Materia: Realidad Virtual.</p>
+<p>Diseño de concha acústica.</p>
+<p>Herramientas: Blender</p>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
